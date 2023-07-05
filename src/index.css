@@ -262,14 +262,22 @@ h2 {
   text-align: center;
 }
 
-.bevetelek .tetel__ertek,
-.bevetelek .tetel__torol--gomb {
+.bevetelek .tetel__torol--gomb,
+.kiadasok .tetel__torol--gomb {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
+.bevetelek .tetel__ertek {
   color: var(--blackgreen);
 }
 
 .kiadasok .tetel__ertek,
-.kiadasok .tetel__szazalek,
-.kiadasok .tetel__torol--gomb {
+.kiadasok .tetel__szazalek {
   color: var(--red);
 }
 

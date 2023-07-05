@@ -198,7 +198,7 @@ function App() {
                           className="tetel__torol--gomb"
                           onClick={() => tetelTorol(item.id, item.type)}
                         >
-                          <i className="ion-ios-close-outline"></i>
+                          Töröl
                         </button>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ function App() {
                           className="tetel__torol--gomb"
                           onClick={() => tetelTorol(item.id, item.type)}
                         >
-                          <i className="ion-ios-close-outline"></i>
+                          Töröl
                         </button>
                       </div>
                     </div>
