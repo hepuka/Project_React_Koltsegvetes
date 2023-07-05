@@ -42,6 +42,11 @@ function App() {
       aktszaz: actualPercent(amount),
     };
 
+    if (type.length === 0 || amount.length === 0 || description.length === 0) {
+      alert("Add meg a hiányzó adatokat");
+      return;
+    }
+
     if (type === "bev") {
       setBevetelek((item) => [...item, data]);
     } else if (type === "kia") {
@@ -156,6 +161,7 @@ function App() {
             className="hozzaad__tipus"
             value={type}
             onChange={(e) => setType(e.target.value)}
+            required
           >
             <option hidden>-- Válassz egy típust --</option>
             <option value="bev">Bevétel</option>
@@ -165,12 +171,14 @@ function App() {
             type="number"
             className="hozzaad__ertek"
             placeholder="Összeg"
+            required
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
           <input
             type="text"
             className="hozzaad__leiras"
+            required
             placeholder="Leírás"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
