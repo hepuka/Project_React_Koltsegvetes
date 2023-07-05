@@ -84,6 +84,7 @@ function App() {
       return (bevosszeg += akt.amount);
     });
   };
+
   const setKiaOsszeg = () => {
     kiadasok.map((akt) => {
       return (kiaosszeg += akt.amount);
