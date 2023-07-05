@@ -86,11 +86,9 @@ function App() {
   };
 
   const getSzazalek = () => {
-    if (bevetelek.length === 0) {
-      szazalek = 0;
+    if (bevetelek.length !== 0) {
+      szazalek = Math.round((kiaosszeg / bevosszeg) * 100);
     }
-
-    szazalek = Math.round((kiaosszeg / bevosszeg) * 100);
   };
 
   const tetelTorol = (id, type) => {
