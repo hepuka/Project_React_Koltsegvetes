@@ -1,0 +1,339 @@
+/**********************************************
+*** Általános
+**********************************************/
+
+:root {
+  --grayblack: #555;
+  --gray: rgba(255, 255, 255, 0.2);
+  --red: rgb(255, 0, 0);
+  --blackgreen: #054240;
+  --white: #e7e7e7;
+  --bg: #f7f7f7;
+  --lred: #ffdad9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--grayblack);
+  font-family: Open Sans;
+  font-size: 16px;
+  height: 100vh;
+  font-weight: 400;
+}
+
+.red {
+  color: var(--red) !important;
+}
+.red-focus:focus {
+  border: 1px solid var(--red) !important;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/**********************************************
+*** FELSŐ SZAKASZ
+**********************************************/
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.koltsegvetes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  width: 300px;
+  color: var(--grayblack);
+}
+
+.koltsegvetes__cim {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.koltsegvetes__ertek {
+  font-weight: bold;
+  font-size: 46px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.koltsegvetes__bevetelek,
+.koltsegvetes__kiadasok {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.koltsegvetes__bevetelek {
+  margin-bottom: 10px;
+  background-color: var(--blackgreen);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.koltsegvetes__kiadasok {
+  background-color: var(--red);
+  border-radius: 10px;
+  color: var(--white);
+}
+
+.inside {
+  display: flex;
+}
+
+.koltsegvetes__bevetelek--szoveg,
+.koltsegvetes__kiadasok--szoveg {
+  font-size: 13px;
+  color: var(--white);
+}
+
+.koltsegvetes__bevetelek--ertek,
+.koltsegvetes__kiadasok--ertek {
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.koltsegvetes__bevetelek--szazalek,
+.koltsegvetes__kiadasok--szazalek {
+  width: 34px;
+  font-size: 11px;
+  padding: 3px 0;
+  margin-left: 10px;
+}
+
+.koltsegvetes__kiadasok--szazalek {
+  background-color: var(--gray);
+  text-align: center;
+  border-radius: 3px;
+}
+
+/**********************************************
+*** ALSÓ SZAKASZ
+**********************************************/
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hozzaad {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 400px;
+}
+
+.hozzaad__leiras,
+.hozzaad__ertek,
+.hozzaad__tipus {
+  border: 1px solid var(--white);
+  font-size: inherit;
+  padding: 12px 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: border 0.6s;
+}
+
+.hozzaad__leiras {
+  width: 25vw;
+}
+.hozzaad__ertek {
+  width: 160px;
+}
+
+.hozzaad__gomb {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 15px;
+  background: none;
+  border: 1px solid var(--white);
+  color: var(--blackgreen);
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+  transition: border 0.6s;
+}
+
+.hozzaad__gomb:active {
+  transform: translateY(2px);
+}
+
+.hozzaad__tipus:focus,
+.hozzaad__leiras:focus,
+.hozzaad__ertek:focus {
+  outline: none;
+  border: 1px solid var(--blackgreen);
+}
+
+.hozzaad__gomb:focus {
+  outline: none;
+}
+
+.kontener {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.bevetelek,
+.kiadasok {
+  min-width: 400px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  padding-left: 13px;
+}
+
+.bevetelek_cim {
+  color: var(--blackgreen);
+}
+
+.kiadasok__cim {
+  color: var(--red);
+}
+
+.tetel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px;
+  border-bottom: 1px solid var(--white);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.tetel:first-child {
+  border-top: 1px solid var(--white);
+}
+.tetel:nth-child(even) {
+  background-color: var(--bg);
+}
+
+.tetel__ertek {
+  transition: transform 0.3s;
+}
+
+.tetel__szazalek {
+  float: left;
+  margin-left: 20px;
+  transition: transform 0.3s;
+  font-size: 11px;
+  background-color: var(--lred);
+  padding: 3px;
+  border-radius: 3px;
+  width: 32px;
+  text-align: center;
+}
+
+.bevetelek .tetel__ertek,
+.bevetelek .tetel__torol--gomb {
+  color: var(--blackgreen);
+}
+
+.kiadasok .tetel__ertek,
+.kiadasok .tetel__szazalek,
+.kiadasok .tetel__torol--gomb {
+  color: var(--red);
+}
+
+.tetel__torol {
+  float: left;
+}
+
+.tetel__torol--gomb {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  margin-left: 15px;
+}
+
+.tetel__torol--gomb:focus {
+  outline: none;
+}
+.tetel__torol--gomb:active {
+  transform: translateY(2px);
+}
+
+.tetel:hover .tetel__ertek {
+  transform: translateX(-10px);
+}
+.tetel:hover .tetel__szazalek {
+  transform: translateX(-10px);
+}
+
+@media (max-width: 600px) {
+  .hozzaad {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .hozzaad__leiras {
+    width: 60vw;
+  }
+  .hozzaad__ertek {
+    width: 60vw;
+  }
+
+  .hozzaad__gomb {
+    margin-left: -10px;
+  }
+
+  .bevetelek,
+  .kiadasok {
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  .tetel__torol--gomb {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+    margin-left: 15px;
+  }
+}
