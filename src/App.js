@@ -57,16 +57,6 @@ function App() {
       }
     }
 
-    // if (type === "bev") {
-    //   const copy = [...bevetelek];
-    //   copy.splice(id, 1);
-    //   setBevetelek(copy);
-    // } else if (type === "kia") {
-    //   const copy = [...kiadasok];
-    //   copy.splice(id, 1);
-    //   setKiadasok(copy);
-    // }
-
     totalSum();
     setBevOsszeg();
     setKiaOsszeg();

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const Inputs = ({ total, bevetelek, kiadasok, setBevetelek, setKiadasok }) => {
+const Inputs = ({ total, setBevetelek, setKiadasok }) => {
   const [type, setType] = useState("");
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
@@ -16,26 +16,27 @@ const Inputs = ({ total, bevetelek, kiadasok, setBevetelek, setKiadasok }) => {
       aktszaz: actualPercent(amount),
     };
 
-    if (type.length === 0 || amount.length === 0 || description.length === 0) {
-      alert("Add meg a hiányzó adatokat");
-      return;
-    }
+    if (type.length > 0 && amount.length > 0 && description.length > 0) {
+      if (type === "bev") {
+        setBevetelek((item) => [...item, data]);
+      } else if (type === "kia") {
+        setKiadasok((item) => [...item, data]);
+      }
 
-    if (type === "bev") {
-      setBevetelek((item) => [...item, data]);
-    } else if (type === "kia") {
-      setKiadasok((item) => [...item, data]);
+      resetInputs();
     }
-
-    setAmount("");
-    setType("");
-    setDescription("");
   };
 
   let actualPercent = (actualdata) => {
     if (total > 0) {
       return Math.round((actualdata / total) * 100);
     }
+  };
+
+  const resetInputs = () => {
+    setAmount("");
+    setType("");
+    setDescription("");
   };
 
   return (
