@@ -72,10 +72,12 @@ function App() {
     setKiaOsszeg();
   };
 
-  totalSum();
-  setBevOsszeg();
-  setKiaOsszeg();
-  getSzazalek();
+  (function init() {
+    totalSum();
+    setBevOsszeg();
+    setKiaOsszeg();
+    getSzazalek();
+  })();
 
   return (
     <div className="container">
