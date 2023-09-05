@@ -29,15 +29,11 @@ function App() {
   };
 
   const setBevOsszeg = () => {
-    bevetelek.map((akt) => {
-      return (bevosszeg += akt.amount);
-    });
+    bevetelek.reduce((acc, curr) => acc + curr, 0);
   };
 
   const setKiaOsszeg = () => {
-    kiadasok.map((akt) => {
-      return (kiaosszeg += akt.amount);
-    });
+    kiadasok.reduce((acc, curr) => acc + curr, 0);
   };
 
   const getSzazalek = () => {
